@@ -27,7 +27,7 @@
 ### [✅] Version Control Setup
 - ✅ Working on branch: copilot/migrate-s3-to-azure-blob-another-one
 
-### [⌛️] Code Migration
+### [✅] Code Migration
 Files migrated:
 - [✅] web/pom.xml - Updated AWS SDK to Azure Storage SDK
 - [✅] worker/pom.xml - Updated AWS SDK to Azure Storage SDK
@@ -44,9 +44,12 @@ Files migrated:
 - [✅] web/src/main/resources/application.properties - Updated
 - [✅] worker/src/main/resources/application.properties - Updated
 
-Remaining tasks:
-- [⌛️] Remove old AWS S3 files (AwsS3Config.java, AwsS3Service.java, S3FileProcessingService.java, S3StorageItem.java)
-- [⌛️] Update test files
+Cleanup tasks:
+- [✅] Removed old AWS S3 configuration files (AwsS3Config.java in web and worker)
+- [✅] Removed old AWS S3 service files (AwsS3Service.java, S3FileProcessingService.java)
+- [✅] Removed S3StorageItem model (replaced with BlobStorageItem)
+- [✅] Created new test file (AzureBlobFileProcessingServiceTest.java)
+- [✅] Removed old test file (S3FileProcessingServiceTest.java)
 
 ### [ ] Validation & Fix
 - [ ] Build Environment Setup
