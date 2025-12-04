@@ -1,8 +1,7 @@
 ---
+# For format details, see: https://gh.io/customagents/config
 name: AppModernization 
 description: Modernize the Java application
-argument-hint: Describe what to modernize (Java)
-infer: true
 
 tools: ['shell', 'read', 'edit', 'search', 'custom-agent', 'web', 'todo',
 'appmod-completeness-validation',
@@ -23,7 +22,6 @@ tools: ['shell', 'read', 'edit', 'search', 'custom-agent', 'web', 'todo',
 'install_jdk',
 'install_maven']
 
-model: Claude Sonnet 4.5
 ---
 
 # App Modernization agent instructions
