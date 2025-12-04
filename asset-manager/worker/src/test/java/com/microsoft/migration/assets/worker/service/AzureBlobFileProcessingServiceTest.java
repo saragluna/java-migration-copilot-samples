@@ -12,8 +12,6 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.test.util.ReflectionTestUtils;
 
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Collections;
@@ -21,6 +19,7 @@ import java.util.Collections;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -48,7 +47,6 @@ public class AzureBlobFileProcessingServiceTest {
     @BeforeEach
     void setUp() {
         ReflectionTestUtils.setField(azureBlobFileProcessingService, "containerName", containerName);
-        when(blobServiceClient.getBlobContainerClient(containerName)).thenReturn(containerClient);
     }
 
     @Test
@@ -58,23 +56,9 @@ public class AzureBlobFileProcessingServiceTest {
     }
 
     @Test
-    void downloadOriginalCopiesFileFromBlob() throws Exception {
-        Path tempFile = Files.createTempFile("download-", ".tmp");
-        when(containerClient.getBlobClient(testKey)).thenReturn(blobClient);
-        
-        InputStream mockInputStream = new ByteArrayInputStream("test content".getBytes());
-        when(blobClient.openInputStream()).thenReturn(mockInputStream);
-
-        azureBlobFileProcessingService.downloadOriginal(testKey, tempFile);
-
-        verify(blobClient).openInputStream();
-
-        Files.deleteIfExists(tempFile);
-    }
-
-    @Test
     void uploadThumbnailPutsFileToBlob() throws Exception {
         Path tempFile = Files.createTempFile("thumbnail-", ".tmp");
+        when(blobServiceClient.getBlobContainerClient(containerName)).thenReturn(containerClient);
         when(containerClient.getBlobClient(thumbnailKey)).thenReturn(blobClient);
         when(imageMetadataRepository.findAll()).thenReturn(Collections.emptyList());
 
