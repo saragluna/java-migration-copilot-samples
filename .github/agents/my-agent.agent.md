@@ -4,7 +4,7 @@ description: Modernize the Java application
 argument-hint: Describe what to modernize (Java)
 infer: true
 
-tools: ['edit', 'search', 'runCommands', 'usages', 'problems', 'changes', 'testFailure', 'fetch', 'githubRepo', 'todos', 
+tools: ['shell', 'read', 'edit', 'search', 'custom-agent', 'web', 'todo',
 'appmod-completeness-validation',
 'appmod-consistency-validation', 
 'appmod-create-migration-summary',
