@@ -21,22 +21,28 @@
 ### [✅] Migration Plan Generation
 Generated comprehensive migration plan with detailed steps (see migration-plan.md)
 
-### [⌛️] Version Control Setup
-Initializing version control for tracking changes
+### [✅] Version Control Setup
+Initialized version control for tracking changes
 
-### [ ] Code Migration
-Files to be migrated:
-- [ ] asset-manager/web/pom.xml
-- [ ] asset-manager/worker/pom.xml
-- [ ] asset-manager/web/src/main/java/com/microsoft/migration/assets/config/AwsS3Config.java
-- [ ] asset-manager/web/src/main/java/com/microsoft/migration/assets/service/AwsS3Service.java
-- [ ] asset-manager/worker/src/main/java/com/microsoft/migration/assets/worker/config/AwsS3Config.java
-- [ ] asset-manager/worker/src/main/java/com/microsoft/migration/assets/worker/service/S3FileProcessingService.java
-- [ ] asset-manager/web/src/main/resources/application.properties
-- [ ] asset-manager/worker/src/main/resources/application.properties
-- [ ] Model and supporting files
+### [⌛️] Code Migration
+Files being migrated:
+- [✅] asset-manager/web/pom.xml - Updated dependencies from AWS SDK to Azure Storage Blob
+- [✅] asset-manager/worker/pom.xml - Updated dependencies from AWS SDK to Azure Storage Blob
+- [✅] asset-manager/web/src/main/java/com/microsoft/migration/assets/config/AwsS3Config.java -> AzureBlobConfig.java
+- [✅] asset-manager/web/src/main/java/com/microsoft/migration/assets/service/AwsS3Service.java -> AzureBlobService.java
+- [✅] asset-manager/web/src/main/java/com/microsoft/migration/assets/model/S3StorageItem.java -> BlobStorageItem.java
+- [✅] asset-manager/web/src/main/java/com/microsoft/migration/assets/model/ImageMetadata.java - Updated field names
+- [✅] asset-manager/web/src/main/java/com/microsoft/migration/assets/service/StorageService.java - Updated interface
+- [✅] asset-manager/web/src/main/java/com/microsoft/migration/assets/service/LocalFileStorageService.java - Updated to use BlobStorageItem
+- [✅] asset-manager/web/src/main/java/com/microsoft/migration/assets/controller/S3Controller.java -> StorageController.java
+- [✅] asset-manager/worker/src/main/java/com/microsoft/migration/assets/worker/config/AwsS3Config.java -> AzureBlobConfig.java
+- [✅] asset-manager/worker/src/main/java/com/microsoft/migration/assets/worker/service/S3FileProcessingService.java -> BlobFileProcessingService.java
+- [✅] asset-manager/worker/src/main/java/com/microsoft/migration/assets/worker/model/ImageMetadata.java - Updated field names
+- [✅] asset-manager/web/src/main/resources/application.properties - Updated configuration
+- [✅] asset-manager/worker/src/main/resources/application.properties - Updated configuration
+- [✅] asset-manager/worker/src/test/java/com/microsoft/migration/assets/worker/service/S3FileProcessingServiceTest.java -> BlobFileProcessingServiceTest.java
 
-### [ ] Validation & Fixing
+### [⌛️] Validation & Fixing
 - Build Environment Setup
   - [✅] Verify JDK installation - Java 8 available at /usr/lib/jvm/temurin-8-jdk-amd64
   - [✅] Verify Maven installation - Maven 3.9.11 available
