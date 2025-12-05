@@ -3,25 +3,6 @@
 name: AppModernization 
 description: Modernize the Java application
 
-tools: ['shell', 'read', 'edit', 'search', 'custom-agent', 'web', 'todo',
-'appmod-completeness-validation',
-'appmod-consistency-validation', 
-'appmod-create-migration-summary',
-'appmod-fetch-knowledgebase',
-'appmod-get-vscode-config',
-'appmod-preview-markdown',
-'appmod-run-task',
-'appmod-search-file',
-'appmod-search-knowledgebase',
-'appmod-version-control',
-'build_java_project',
-'run_tests_for_java',
-'validate_cves_for_java',
-'list_jdks',
-'list_mavens',
-'install_jdk',
-'install_maven']
-
 ---
 
 # App Modernization agent instructions
