@@ -3,6 +3,8 @@
 name: AppModernization 
 description: Modernize the Java application
 
+tools: ['shell', 'read', 'edit', 'search', 'custom-agent', 'web', 'todo', 'ghcp-appmod-mcp-server/*']
+
 ---
 
 # App Modernization agent instructions
